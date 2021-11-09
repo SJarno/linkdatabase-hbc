@@ -1,0 +1,43 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+
+}
+
+main {
+    margin: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+nav {
+    background-color: rgb(85, 173, 173);
+}
+
+a, p , li, label {
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+section {
+    margin: 2rem;
+}
+

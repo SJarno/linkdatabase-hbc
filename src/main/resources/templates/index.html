@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" th:href="@{styles/reset.css}">
-    <link rel="stylesheet" th:href="@{styles/index.css}">
+
+<head th:replace="fragments/head :: head(title='Frontpage')">
 </head>
+
 <body>
     <header>
-
+        <nav th:replace="fragments/navigation :: navigation"></nav>
     </header>
     <main>
-        <h1>Testi</h1>
-        <h2>Lisää juttuja</h2>
-        <h3>Nimi vaihdettu</h3>
+        <h1>Interesting links: </h1>
+        <section>
+            <h3>Linkit:</h3>
+            <div th:if="${!links.empty}">
+                <ul th:each="link : ${links}">
+                    <li th:text="${link.title}"></li>
+                </ul>
+            </div>
+        </section>
+
     </main>
     <footer>
 
     </footer>
 </body>
+
 </html>
