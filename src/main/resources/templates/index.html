@@ -12,11 +12,11 @@
         <h1>Interesting links: </h1>
         <section>
             <h3>Linkit:</h3>
-            <div th:if="${!links.empty}">
+            <!-- <div th:if="${!links.empty}"> -->
                 <ul th:each="link : ${links}">
                     <li th:text="${link.title}"></li>
                 </ul>
-            </div>
+            <!-- </div> -->
         </section>
 
     </main>
