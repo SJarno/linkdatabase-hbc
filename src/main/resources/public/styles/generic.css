@@ -3,11 +3,29 @@ html {
 }
 
 body {
+    background-color: rgb(44, 41, 41);
+    
+}
+
+header figure {
+    background-image: url("../images/steampunk-door.jpg");
+    min-height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
 
 }
 
 main {
     margin: 2rem;
+    background-image: url("../images/galaxy-main.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 60rem;
+}
+/* generic colors: */
+h1, h2, h3, a, p, label, li {
+    color: brown;
 }
 
 h1 {
@@ -16,6 +34,7 @@ h1 {
 
 h2 {
     font-size: 3.4rem;
+
 }
 
 h3 {
@@ -23,7 +42,9 @@ h3 {
 }
 
 nav {
-    background-color: rgb(85, 173, 173);
+    padding: 2rem;
+    background-color: rgb(27, 26, 26);
+    border-bottom: solid 0.25rem wheat;
 }
 
 a, p , li, label {

@@ -5,26 +5,10 @@
 </head>
 
 <body>
-    <header>
-        <nav th:replace="fragments/navigation :: navigation"></nav>
-    </header>
+    <header th:replace="fragments/header :: header-fragment"></header>
     <main>
         <section>
-            <form th:action="@{/admin}" method="post">
-                <label for="title">Title: </label>
-                <input type="text" name="title">
-                <br>
-                <label for="description">Description: </label>
-                <input type="text" name="description">
-                <br>
-                <label for="keyword">Keyword: </label>
-                <input type="text" name="keyword">
-                <br>
-                <label for="url">Url for link: </label>
-                <input type="text" name="url">
-                <br>
-                <input type="submit" value="Add link!">
-            </form>
+            <form th:replace="fragments/form :: link-form"></form>
         </section>
     </main>
     <footer></footer>

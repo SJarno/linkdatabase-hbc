@@ -1,0 +1,32 @@
+<form th:action="@{/admin}" method="post" th:fragment="link-form">
+    <table>
+        <thead>
+            <tr>
+                <th>Testihomma</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="title">Title: </label></td>
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description: </label></td>
+                <td><input type="text" name="description"></td>
+            </tr>
+            <tr>
+                <td><label for="keyword">Keyword: </label></td>
+                <td><input type="text" name="keyword"></td>
+            </tr>
+            <tr>
+                <td><label for="url">Url for link: </label></td>
+                <td><input type="text" name="url"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input type="submit" value="Add link!"></td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
