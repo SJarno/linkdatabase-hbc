@@ -18,7 +18,7 @@ public class LinkService {
         linkRepository.save(link);
     }
     public List<Link> getAllLinks() {
-        return (List<Link>) linkRepository.findAll();
+        return linkRepository.findAll();
     }
     
 }
