@@ -1,6 +1,19 @@
 <nav th:fragment="navigation">
     <ul>
-        <li><a th:href="@{/}">Frontpage</a></li>
-        <li><a th:href="@{/admin}">Admin page</a></li>
+        <li><a th:href="@{/index}">Frontpage</a></li>
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/admin}">Admin page</a></li>
+        <!-- th:action -->
+        <form th:action="@{/login}" sec:authorize="isAnonymous()" method="post">
+            <ul>
+                <li><label for="name">Tunnus: </label></li>
+                <li><input type="text" name="username" id=""></li>
+                <li><label for="password">Salasana: </label></li>
+                <li><input type="password" name="password" id=""></li>
+                <li><input type="submit" value="Log in!"></li>
+            </ul>
+        </form>
+        <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+            <input type="submit" value="logout">
+        </form>
     </ul>
 </nav>
