@@ -23,11 +23,6 @@ public class LoginpageController {
 
     @GetMapping("/login")
     public String home(Model model) {
-
-        /*
-         * System.out.println("\n\nTESTI: \n\n"
-         * +userDetailsService.loadUserByUsername("username"));
-         */
         return "redirect:/index";
     }
 
@@ -35,7 +30,6 @@ public class LoginpageController {
     public String redirectAfterLogin() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth.isAuthenticated()) {
-            // System.out.println("\n\nUUUDELLEENOHJAUS\n\n");
             return "redirect:/admin";
         }
         return "redirect:/login";

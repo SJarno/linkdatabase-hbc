@@ -4,14 +4,26 @@
 <head th:replace="fragments/head :: head(title='Admin page')">
 </head>
 
-<body>
+<body onload="loadLinks()">
     <header th:replace="fragments/header :: header-fragment"></header>
     <main>
-        <section>
-            <form th:replace="fragments/form :: link-form"></form>
-        </section>
+        <div class="content">
+            <section>
+                <h1>Add links:</h1>
+                <form th:replace="fragments/form :: link-form"></form>
+            </section>
+            <aside>
+                <h2>Links:</h2>
+                <div id="links">
+                </div>
+            </aside>
+        </div>
     </main>
-    <footer></footer>
+    <footer>
+
+    </footer>
+    <script th:inline="javascript"> var contextRoot = /*[[@{/}]]*/ '';</script>
+    <script th:src="@{/js/domain-access.js}" defer></script>
 </body>
 
 </html>
