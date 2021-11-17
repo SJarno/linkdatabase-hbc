@@ -50,12 +50,12 @@ public class DefaultController {
     }
 
     /* Default user for testing */
-    /* @PostConstruct
+    @PostConstruct
     public void init() {
-        //userAccountRepository.deleteAll();
+        userAccountRepository.deleteAll();
         UserAccount userAccount = new UserAccount("aa", passwordEncoder.encode("bb"),
                 new ArrayList(Arrays.asList("rooli")));
         userAccountRepository.save(userAccount);
-    } */
+    }
 
 }
