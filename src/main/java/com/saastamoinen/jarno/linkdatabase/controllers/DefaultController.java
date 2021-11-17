@@ -17,7 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class DefaultController {
@@ -52,7 +52,7 @@ public class DefaultController {
     /* Default user for testing */
     @PostConstruct
     public void init() {
-        userAccountRepository.deleteAll();
+        //userAccountRepository.deleteAll();
         UserAccount userAccount = new UserAccount("aa", passwordEncoder.encode("bb"),
                 new ArrayList(Arrays.asList("rooli")));
         userAccountRepository.save(userAccount);
