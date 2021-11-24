@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+
+:root {
+    --main-font-color: #b4711a;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
     background-color: rgb(44, 41, 41);
-    
+    font-family: 'Genos', sans-serif;
 }
 
 header figure {
@@ -25,7 +31,8 @@ main {
 }
 /* generic colors: */
 h1, h2, h3 {
-    color: brown;
+    margin-top: -1rem;
+    color: var(--main-font-color);
 }
 
 h1 {
@@ -50,7 +57,7 @@ nav {
 a, p , li, label, td {
     font-size: 1.8rem;
     text-decoration: none;
-    color: brown;
+    color: var(--main-font-color);
 }
 
 .error-message {

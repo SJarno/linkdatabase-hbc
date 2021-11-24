@@ -1,6 +1,7 @@
 package com.saastamoinen.jarno.linkdatabase.security;
 
-import com.saastamoinen.jarno.linkdatabase.services.CustomUserDetailsService;
+
+import com.saastamoinen.jarno.linkdatabase.services.ProductionUserDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -21,7 +22,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class ProductionSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private CustomUserDetailsService userDetailsService;
+    private ProductionUserDetailsService userDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -29,12 +30,15 @@ public class ProductionSecurityConfiguration extends WebSecurityConfigurerAdapte
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/index").permitAll()
                 .antMatchers(HttpMethod.GET, "/index").permitAll()
-                .antMatchers(HttpMethod.GET, "/admin").authenticated()
+                .antMatchers("/admin", "/links").authenticated()
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin()
-                    .loginPage("/login").permitAll()
-                    .and()
+                    .loginPage("/index")
+                    .loginProcessingUrl("/login")
+                    .defaultSuccessUrl("/admin", true)
+                    .permitAll()                  
+                .and()
                 .logout()
                     .logoutSuccessUrl("/index")
                     .clearAuthentication(true)

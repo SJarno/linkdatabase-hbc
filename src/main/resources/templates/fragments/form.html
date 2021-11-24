@@ -1,19 +1,22 @@
+<!-- Form for adding a link -->
 <form th:action="@{/add-link}" method="post" th:fragment="link-form" th:object="${link}">
     <table>
         <thead>
             <tr>
-                <th>Testihomma</th>
+                <th><h1>Add links here:</h1></th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><label for="title">Title: </label></td>
-                <td><input type="text" th:field="*{title}"></td>
+                <td><input type="text" th:field="*{title}" minlength="4" maxlength="10"></td>
                 <td th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-message"></td>
             </tr>
             <tr>
                 <td><label for="description">Description: </label></td>
-                <td><input type="text" th:field="*{description}"></td>
+                <td>
+                    <textarea name="description" cols="20" rows="5" th:field="*{description}" minlength="4" maxlength="10"></textarea>
+                </td>
                 <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message"></td>
             </tr>
             <tr>
@@ -30,6 +33,29 @@
         <tfoot>
             <tr>
                 <td><input type="submit" value="Add link!"></td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+<!-- Form to change password -->
+<form th:action="@{/update-admin}" method="post" th:fragment="update-password-fragment">
+    <table>
+        <thead>
+            <tr><h1>Change admin password</h1></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="oldPassword">Input old password:</label></td>
+                <td><input type="password" th:name="oldPassword"></td>
+            </tr>
+            <tr>
+                <td><label for="newPassword">Input new password:</label></td>
+                <td><input type="password" th:name="newPassword" id=""></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input type="submit" value="Update"></td>
             </tr>
         </tfoot>
     </table>

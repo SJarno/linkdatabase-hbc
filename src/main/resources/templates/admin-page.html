@@ -7,23 +7,41 @@
 <body onload="loadLinks()">
     <header th:replace="fragments/header :: header-fragment"></header>
     <main>
+        <!-- Tab for content: -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Links')">
+                <p>Links</p>
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'LinkForm')">
+                <p>Add link</p>
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Settings')">
+                <p>Settings</p>
+            </button>
+
+        </div>
+
+        <!-- Tab content: -->
+        <!-- Displays links -->
         <div class="content">
-            <section>
-                <h1>Add links:</h1>
+            <section id="Links" class="tabcontent">
+                <h2>Links:</h2>
+                <div id="links" class="content">
+                </div>
+            </section>
+            <!-- section for adding links -->
+            <section id="LinkForm" class="tabcontent">
                 <form th:replace="fragments/form :: link-form"></form>
             </section>
-            <aside>
-                <h2>Links:</h2>
-                <div id="links">
-                </div>
-            </aside>
+            <!-- Section for updating admin password -->
+            <section id="Settings" class="tabcontent">
+                <form th:replace="fragments/form :: update-password-fragment"></form>
+            </section>
         </div>
     </main>
     <footer>
 
     </footer>
-    <script th:inline="javascript"> var contextRoot = /*[[@{/}]]*/ '';</script>
-    <script th:src="@{/js/domain-access.js}" defer></script>
 </body>
 
 </html>

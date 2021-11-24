@@ -23,6 +23,10 @@ public class LinkService {
     public List<Link> getAllLinks() {
         return linkRepository.findAll();
     }
+    public Link getLinkById(Long id) {
+        return linkRepository.findById(id).get();
+    }
+    
     public List<Link> findLinksByTag(String keyword) {
         return linkRepository.findByKeyword(keyword);
     }
@@ -44,5 +48,6 @@ public class LinkService {
             linkRepository.delete(linkToRemove.get());
         }
     }
+    
     
 }

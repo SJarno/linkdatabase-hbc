@@ -1,42 +1,77 @@
-const url = contextRoot + "links";
+const url = contextRoot;
 
+/*Load all images:  */
 async function loadLinks() {
-    const response = await fetch(url, {
+    const response = await fetch(url + "links", {
         headers: {
             "Accept": "application/json"
         }
     });
+
     const links = await response.json();
-    console.log(links);
+
     addLinkToElement(links);
+    return links;
 };
 
-const addLinkToElement = data => {
+/* Load link by id */
+async function loadLinkById(id) {
+    const response = await fetch(url + "links/" + id, {
+        headers: {
+            "Accept": "application/json"
+        }
+    });
+    return response.json();
+};
+/* Place fetched images to page */
+/* const addLinkToElement = (data) => { */
+async function addLinkToElement(data) {
     data.forEach(link => {
-        const ulElement = document.createElement("ul");
-        const listElement = document.createElement("li");
-        const headerElement = document.createElement("h3");
-        headerElement.innerText = "Title: "+link.title;
-        /* Elements for info: */
-        const idPara = document.createElement("p");
-        const descPara = document.createElement("p");
-        const keywordPara = document.createElement("p");
-        const urlPara = document.createElement("p");
-        idPara.innerText = "Id: "+link.id;
-        descPara.innerText = "Description: "+link.description;
-        keywordPara.innerText = "Keyword: "+link.keyword;
-        urlPara.innerText = "Url: "+link.url;
-
-        /*  */
-        listElement.appendChild(headerElement);
-        listElement.appendChild(idPara);
-        listElement.appendChild(descPara);
-        listElement.appendChild(keywordPara);
-        listElement.appendChild(urlPara);
-        /*  */
-        ulElement.appendChild(listElement);
-        document.getElementById("links").appendChild(ulElement);
+        createSmallCard(link);
     });
 
 
 };
+
+const createSmallCard = async (link) => {
+
+    /* create div element with id/class sm-card-container */
+    const divCard = document.createElement("div");
+    divCard.className = "card";
+
+    const divCardContainer = document.createElement("div");
+    divCardContainer.className = "sm-card-container";
+
+    /* Create header element for title: */
+    const headerElement = document.createElement("h3");
+    headerElement.innerText = "Title: " + link.title;
+    divCardContainer.appendChild(headerElement);
+
+    /* Element for description: */
+    const paraDescription = document.createElement("p");
+    paraDescription.innerHTML = "Description: "+link.description;
+
+    /* Element for key */
+    const paraKey = document.createElement("p");
+    paraKey.innerHTML = "Tag: "+link.keyword;
+
+    /* Element for hyperlink */
+    const hyperlink = document.createElement("a");
+    hyperlink.href = link.url;
+    hyperlink.innerHTML = "Click to link!";
+    hyperlink.target = "_blank";
+
+    
+    divCardContainer.appendChild(paraDescription);
+    divCardContainer.appendChild(paraKey);
+    divCardContainer.appendChild(hyperlink);
+    divCard.appendChild(divCardContainer);
+    
+    /* Add link info to card */
+
+    document.getElementById("links").appendChild(divCard);
+
+};
+
+//window.onload = loadLinks();
+

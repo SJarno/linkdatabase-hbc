@@ -1,7 +1,7 @@
 <nav th:fragment="navigation">
     <ul>
-        <li><a th:href="@{/index}">Frontpage</a></li>
-        <li sec:authorize="isAuthenticated()"><a th:href="@{/admin}">Admin page</a></li>
+        <li><a th:href="@{/index}"><h2>Frontpage</h2></a></li>
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/admin}"><h2>Admin page</h2></a></li>
         <!-- th:action -->
         <form th:action="@{/login}" sec:authorize="isAnonymous()" method="post">
             <ul>

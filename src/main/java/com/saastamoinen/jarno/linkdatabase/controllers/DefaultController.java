@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 
 import com.saastamoinen.jarno.linkdatabase.models.UserAccount;
 import com.saastamoinen.jarno.linkdatabase.repositories.UserAccountRepository;
-import com.saastamoinen.jarno.linkdatabase.services.CustomUserDetailsService;
+
 import com.saastamoinen.jarno.linkdatabase.services.LinkService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 
 @Controller
 public class DefaultController {
@@ -29,17 +28,10 @@ public class DefaultController {
     PasswordEncoder passwordEncoder;
 
     @Autowired
-    CustomUserDetailsService userDetailsService;
-
-    @Autowired
     private LinkService linkService;
 
     @GetMapping("/")
     public String home() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication.isAuthenticated()) {
-            return "redirect:/admin";
-        }
         return "redirect:/index";
     }
 
@@ -53,8 +45,9 @@ public class DefaultController {
     @PostConstruct
     public void init() {
         userAccountRepository.deleteAll();
-        UserAccount userAccount = new UserAccount("aa", passwordEncoder.encode("bb"),
-                new ArrayList(Arrays.asList("rooli")));
+        UserAccount userAccount = new UserAccount(
+                "admin", passwordEncoder.encode("123"),
+                new ArrayList<>(Arrays.asList("ROLE_ADMIN")));
         userAccountRepository.save(userAccount);
     }
 

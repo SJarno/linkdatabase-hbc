@@ -14,9 +14,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Profile("testing")
+@Profile("production")
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class ProductionUserDetailsService implements UserDetailsService {
     
     @Autowired
     private UserAccountRepository userAccountRepository;
@@ -40,4 +40,5 @@ public class CustomUserDetailsService implements UserDetailsService {
         throw new UsernameNotFoundException("No such user: "+username);
 
     }
+
 }

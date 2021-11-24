@@ -7,8 +7,12 @@
 <body>
     <header th:replace="fragments/header :: header-fragment"></header>
     <main>
-        <h1>Interesting links: </h1>
-        <section>
+        <section class="index-main-section">
+            <h1>Interesting links: </h1>
+            <hr>
+        </section>
+        
+        <section class="index-link-section">
             <h3>Linkit:</h3>
             <!-- <div th:if="${!links.empty}"> -->
                 <ul th:each="link : ${links}">
