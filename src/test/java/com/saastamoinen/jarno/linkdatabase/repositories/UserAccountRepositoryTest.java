@@ -1,10 +1,10 @@
 package com.saastamoinen.jarno.linkdatabase.repositories;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import com.saastamoinen.jarno.linkdatabase.models.UserAccount;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +30,9 @@ public class UserAccountRepositoryTest {
 
     @Test
     void testFindByUsername() {
-        //assertThat(userAccountRepository.findAll().size()).isZero();
         assertEquals(1, userAccountRepository.findAll().size());
+        assertEquals("Mikko", userAccountRepository.findByUsername("Mikko").get().getUsername());
+        assertNotEquals("Miko", userAccountRepository.findByUsername("Mikko").get().getUsername());
         
     }
     
