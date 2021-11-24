@@ -20,12 +20,12 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String adminPage(@ModelAttribute Link link) {
-        System.out.println();
+        /* System.out.println();
         System.out.println("Adminissa");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         System.out.println(auth.getDetails());
         System.out.println(auth.getPrincipal());
-        System.out.println();
+        System.out.println(); */
         return "admin-page";
     }
 

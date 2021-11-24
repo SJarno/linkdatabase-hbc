@@ -14,11 +14,11 @@
         
         <section class="index-link-section">
             <h3>Linkit:</h3>
-            <!-- <div th:if="${!links.empty}"> -->
+            
                 <ul th:each="link : ${links}">
                     <li th:text="${link.title}"></li>
                 </ul>
-            <!-- </div> -->
+
         </section>
 
     </main>
