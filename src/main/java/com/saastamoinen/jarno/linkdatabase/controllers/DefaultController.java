@@ -30,16 +30,12 @@ public class DefaultController {
     @Autowired
     private LinkService linkService;
 
-    @GetMapping("/")
-    public String home() {
-        return "redirect:/index";
-    }
-
     @GetMapping("/index")
     public String showIndexPage(Model model) {
         model.addAttribute("links", linkService.getAllLinks());
         return "index";
     }
+    
 
     /* Default user for testing */
     @PostConstruct
