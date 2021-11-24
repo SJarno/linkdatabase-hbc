@@ -40,7 +40,7 @@ public class ProductionSecurityConfiguration extends WebSecurityConfigurerAdapte
                     .permitAll()                  
                 .and()
                 .logout()
-                    .logoutSuccessUrl("/index")
+                    .logoutSuccessUrl("/")
                     .clearAuthentication(true)
                     .logoutUrl("/logout").permitAll();
 
