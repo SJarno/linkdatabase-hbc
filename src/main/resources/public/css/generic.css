@@ -31,7 +31,7 @@ main {
 }
 /* generic colors: */
 h1, h2, h3 {
-    margin-top: -1rem;
+    /* margin-top: -1rem; */
     color: var(--main-font-color);
 }
 
@@ -65,11 +65,68 @@ a, p , li, label, td {
     color: red;
 }
 
-nav ul {
+.flex-container {
+    line-height: 3rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
 }
+
+.flex-container > * {
+    flex-basis: 100%;
+}
+
+#loginbutton {
+    /* padding: 0.5rem; */
+    box-sizing:content-box;
+    background-color: var(--main-font-color);
+    border-radius: 0.5rem;
+    color: rgb(202, 197, 176);
+    border: 0.175rem solid var(--main-font-color);
+    /* border-left: 0; */
+    font-size: 1.4rem;
+}
+
+#loginbutton:hover {
+    cursor: pointer;
+}
+
+#logoutbutton {
+    background-color: var(--main-font-color);
+    border-radius: 0.5rem;
+    color: rgb(202, 197, 176);
+    border: 0.2rem solid var(--main-font-color);
+    font-size: 1.4rem;
+}
+#logoutbutton:hover {
+    cursor: pointer;
+}
+
+.login-logout-form {
+    display: block;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+}
+
+/* .login-logout-form *> {
+    flex-basis: 100%;
+} */
+
+@media only screen and (min-width: 768px) {
+    .flex-container > * {
+        flex-basis: 0;
+    }
+    .login-logout-form {
+        display: flex;
+        /* flex-direction: row; */
+    }
+    #loginbutton {
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+  }
 
 
 
