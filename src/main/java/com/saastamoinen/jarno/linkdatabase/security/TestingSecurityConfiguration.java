@@ -45,7 +45,7 @@ public class TestingSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .permitAll()                  
                 .and()
                 .logout()
-                    .logoutSuccessUrl("/index")
+                    .logoutSuccessUrl("/")
                     .clearAuthentication(true)
                     .logoutUrl("/logout").permitAll();
 
