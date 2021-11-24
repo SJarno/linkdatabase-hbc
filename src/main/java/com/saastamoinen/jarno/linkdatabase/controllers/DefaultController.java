@@ -11,6 +11,7 @@ import com.saastamoinen.jarno.linkdatabase.repositories.UserAccountRepository;
 import com.saastamoinen.jarno.linkdatabase.services.LinkService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -38,6 +39,7 @@ public class DefaultController {
     
 
     /* Default user for testing */
+    @Profile("testing")
     @PostConstruct
     public void init() {
         userAccountRepository.deleteAll();
