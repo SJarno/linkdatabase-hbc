@@ -34,9 +34,8 @@ public class DefaultController {
         return "index";
     }
     
-
     /* Default user for testing */
-    @Profile("testing")
+    /* @Profile("testing")
     @PostConstruct
     public void init() {
         userAccountRepository.deleteAll();
@@ -44,6 +43,6 @@ public class DefaultController {
                 "admin", passwordEncoder.encode("123"),
                 new ArrayList<>(Arrays.asList("ROLE_ADMIN")));
         userAccountRepository.save(userAccount);
-    }
+    } */
 
 }
