@@ -15,10 +15,11 @@ body {
 
 header figure {
     background-image: url("../images/vla-g60630cd30_1920.jpg");
-    min-height: 40rem;
+    min-height: 17rem;
+    background-position: 27% 6%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 50%;
+    
 
 }
 
@@ -126,6 +127,11 @@ a, p , li, label, td {
     #loginbutton {
         border-radius: 0 0.5rem 0.5rem 0;
     }
+    header figure {
+        min-height: 40rem;
+        background-position: 50% 50%;
+    }
+
   }
 
 
