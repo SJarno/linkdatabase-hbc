@@ -14,7 +14,7 @@ body {
 }
 
 header figure {
-    background-image: url("../images/steampunk-door.jpg");
+    background-image: url("../images/vla-g60630cd30_1920.jpg");
     min-height: 40rem;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,7 +24,7 @@ header figure {
 
 main {
     margin: 2rem;
-    background-image: url("../images/galaxy-main.jpg");
+    background-image: url("../images/earth-g0ed700eab_1920.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 60rem;
