@@ -1,4 +1,5 @@
 /* Generic card rules: */
+/* Add shadows to create the "card" effect */
 .card {
     background: rgba(0, 0, 0, 0.6);
     border: solid 0.1rem black;
@@ -8,6 +9,7 @@
     padding: 2rem;
 }
 
+/* On mouse-over, add a deeper shadow */
 .card:hover {
     border: solid 0.3rem rgba(219, 199, 155, 0.8);
     box-shadow: 0 0 10rem 1rem rgba(150, 118, 70, 0.2);
@@ -19,20 +21,13 @@
 
 /* Small card rules: */
 .sm-card {
-    /* Add shadows to create the "card" effect */
     margin: 2rem;
     max-width: 30rem;
     width: fit-content;
 }
 
-/* On mouse-over, add a deeper shadow */
-
-
 /* Add some padding inside the card container */
-.card-container {
-    
-
-}
+.card-container {}
 
 /* Medium card */
 .md-card {

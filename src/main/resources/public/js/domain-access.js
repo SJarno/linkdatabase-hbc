@@ -26,20 +26,18 @@ async function loadLinkById(id) {
 /* const addLinkToElement = (data) => { */
 async function addLinkToElement(data, className) {
     data.forEach(link => {
-        createSmallCard(link, className);
+        createCard(link, className);
     });
 
 
 };
 
-const createSmallCard = async (link, className) => {
-
+const createCard = async (link, className) => {
     /* create div element with id/class sm-card-container */
     const divCard = document.createElement("div");
     divCard.className = "card "+className;
 
     const divCardContainer = document.createElement("div");
-    /* divCardContainer.className = "sm-card-container"; */
     divCardContainer.className = "card-container";
 
 
@@ -62,14 +60,19 @@ const createSmallCard = async (link, className) => {
     hyperlink.innerHTML = "Click to link!";
     hyperlink.target = "_blank";
 
+    /* Element for modify button */
+    /* const inputElement = document.createElement("input");
+    inputElement.setAttribute("sec:authorize", "isAuthenticated()");
+    inputElement.type = "input"; */
+
     
     divCardContainer.appendChild(paraDescription);
     divCardContainer.appendChild(paraKey);
     divCardContainer.appendChild(hyperlink);
-    divCard.appendChild(divCardContainer);
+    divCardContainer.appendChild(inputElement);
+    /* divCard.appendChild(divCardContainer); */
     
     /* Add link info to card */
-
     document.getElementById("links").appendChild(divCard);
 
 };
