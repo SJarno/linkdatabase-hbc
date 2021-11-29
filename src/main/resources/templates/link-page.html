@@ -3,18 +3,20 @@
 
     <head th:replace="fragments/head :: head(title='Links')">
     </head>
-    <body>
+    <body onload="loadLinks('md-card')">
         <header th:replace="fragments/header :: header-fragment"></header>
         <main>
-            <section class="index-main-section">
+            <section class="link-main-content">
                 <h1>Interesting links: </h1>
                 <hr>
+                <form class="example" >
+                    <input type="text" placeholder="Search by tag name..." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
             </section>  
-            <section class="index-link-section">
-                <h3>Linkit:</h3> 
-                    <ul th:each="link : ${links}">
-                        <li th:text="${link.title}"></li>
-                    </ul>
+            <section>
+                <div id="links" class="content">
+                </div>
             </section>
         </main>
         <footer>
