@@ -56,7 +56,7 @@ nav {
     border-bottom: solid 0.25rem wheat;
 }
 
-a, p, li, label, td {
+a, p, li, label, td, input, button, textarea {
     font-size: 1.8rem;
     text-decoration: none;
     color: var(--main-font-color);
@@ -157,6 +157,18 @@ a, p, li, label, td {
 
 #navLinks form {
     margin-top: 1rem;
+}
+
+#modify-addlink-button {
+    margin-top: 2rem;
+    background-color: inherit;
+    border-radius: 1rem;
+}
+
+#modify-addlink-button:hover {
+    border: solid 0.3rem rgba(219, 199, 155, 0.8);
+    color: #ee8b0a;
+    cursor: pointer;
 }
 
 /* Tablet view */

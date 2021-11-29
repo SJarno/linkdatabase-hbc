@@ -3,7 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
-  
+
 }
 
 .content>* {
@@ -21,8 +21,11 @@
 
 }
 
-
-
 td {
   vertical-align: top;
+}
+
+td textarea {
+  width: 22.15rem;
+  height: 11rem;
 }

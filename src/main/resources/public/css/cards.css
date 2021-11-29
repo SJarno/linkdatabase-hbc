@@ -27,7 +27,9 @@
 }
 
 /* Add some padding inside the card container */
-.card-container {}
+.card-container {
+    
+}
 
 /* Medium card */
 .md-card {
@@ -35,3 +37,15 @@
     max-width: 50rem;
     width: fit-content;
 }
+
+/* #modify-button {
+    margin-top: 2rem;
+    background-color: inherit;
+    border-radius: 1rem;
+}
+
+#modify-button:hover {
+    border: solid 0.3rem rgba(219, 199, 155, 0.8);
+    color: #ee8b0a;
+    cursor: pointer;
+} */
