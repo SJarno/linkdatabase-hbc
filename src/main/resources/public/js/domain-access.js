@@ -1,6 +1,6 @@
 const url = contextRoot;
 
-/*Load all images:  */
+/*Load all images, public path:  */
 async function loadLinks(className) {
     const response = await fetch(url + "links", {
         headers: {
@@ -44,7 +44,7 @@ const createCard = async (link, className) => {
     /* Create header element for title: */
     const headerElement = document.createElement("h3");
     headerElement.innerText = "Title: " + link.title;
-    divCardContainer.appendChild(headerElement);
+    
 
     /* Element for description: */
     const paraDescription = document.createElement("p");
@@ -61,16 +61,21 @@ const createCard = async (link, className) => {
     hyperlink.target = "_blank";
 
     /* Element for modify button */
-    /* const inputElement = document.createElement("input");
+    /* const inputElement = document.createElement("p");
     inputElement.setAttribute("sec:authorize", "isAuthenticated()");
-    inputElement.type = "input"; */
+    inputElement.innerHTML = "Joo"; */
+    /* inputElement.type = "button";
+    inputElement.value = "Test"; */
 
-    
+    divCardContainer.appendChild(headerElement);
     divCardContainer.appendChild(paraDescription);
     divCardContainer.appendChild(paraKey);
     divCardContainer.appendChild(hyperlink);
-    divCardContainer.appendChild(inputElement);
-    /* divCard.appendChild(divCardContainer); */
+    /* divCardContainer.appendChild(inputElement); */
+
+    divCard.appendChild(divCardContainer);
+    
+    
     
     /* Add link info to card */
     document.getElementById("links").appendChild(divCard);
