@@ -19,7 +19,7 @@ header figure {
     background-position: 27% 6%;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 
 }
 
@@ -30,6 +30,7 @@ main {
     background-size: cover;
     min-height: 60rem;
 }
+
 /* generic colors: */
 h1, h2, h3 {
     /* margin-top: -1rem; */
@@ -55,7 +56,7 @@ nav {
     border-bottom: solid 0.25rem wheat;
 }
 
-a, p , li, label, td {
+a, p, li, label, td {
     font-size: 1.8rem;
     text-decoration: none;
     color: var(--main-font-color);
@@ -73,21 +74,19 @@ a, p , li, label, td {
     text-align: center;
     flex-wrap: wrap;
     flex-direction: row;
-    
+
 }
 
-.flex-container > * {
+.flex-container>* {
     flex-basis: 100%;
 }
 
 #loginbutton {
-    /* padding: 0.5rem; */
-    box-sizing:content-box;
+    box-sizing: content-box;
     background-color: var(--main-font-color);
     border-radius: 0.5rem;
     color: rgb(202, 197, 176);
     border: 0.175rem solid var(--main-font-color);
-    /* border-left: 0; */
     font-size: 1.4rem;
 }
 
@@ -102,6 +101,7 @@ a, p , li, label, td {
     border: 0.2rem solid var(--main-font-color);
     font-size: 1.4rem;
 }
+
 #logoutbutton:hover {
     cursor: pointer;
 }
@@ -115,38 +115,94 @@ a, p , li, label, td {
 /* .login-logout-form *> {
     flex-basis: 100%;
 } */
+/* Mobile nav view: */
+.topnav {
+    overflow: hidden;
+    position: relative;
+}
 
+/* Hide links inside nav menu */
+.topnav #navLinks {
+    display: none;
+}
+
+/* Style navigation menu links */
+
+
+/* Style hamburger menu */
+.topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+}
+
+.topnav a.icon:hover {
+    background-color: rgba(208, 211, 180, 0.8);
+    
+}
+#navLinks h2 {
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+#navLinks h2:hover {
+    background-color: black;
+}
+
+.icon {
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+#navLinks form {
+    margin-top: 1rem;
+}
+
+/* Tablet view */
 @media only screen and (min-width: 768px) {
-    .flex-container > * {
+    .flex-container>* {
         flex-basis: 0;
     }
+
     .login-logout-form {
         display: flex;
         /* flex-direction: row; */
     }
+
     #loginbutton {
         border-radius: 0 0.5rem 0.5rem 0;
     }
+
     header figure {
         height: 29rem;
         background-position: 50% 50%;
     }
 
-  }
+    .topnav #navLinks {
+        display: flex;
+    }
 
-  @media only screen and (max-width: 376px) {
+    .topnav a.icon {
+        display: none;
+
+    }
+    nav {
+        padding: 1rem;
+    }
+
+}
+
+@media only screen and (max-width: 376px) {
     header figure {
         height: 15rem;
         background-position: 50% 50%;
     }
-  }
+}
 
-  @media only screen and (max-width: 426px) {
+@media only screen and (max-width: 426px) {
     header figure {
         height: 17rem;
         background-position: 50% 50%;
     }
-  }
-
-
-
+}

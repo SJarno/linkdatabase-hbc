@@ -31,7 +31,7 @@ public class TestingSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/index").permitAll()
+                .antMatchers("/index", "/").permitAll()
                 .antMatchers(HttpMethod.GET, "/index").permitAll()
                 .antMatchers("/admin", "/links").authenticated()
                 .anyRequest().fullyAuthenticated()
@@ -40,12 +40,13 @@ public class TestingSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .loginPage("/index")
                     .loginProcessingUrl("/login")
                     .defaultSuccessUrl("/admin", true)
-                    .permitAll()                  
-                .and()
-                .logout()
-                    .logoutSuccessUrl("/")
+                    .permitAll();                  
+                
+                http.logout()
                     .clearAuthentication(true)
-                    .logoutUrl("/logout").permitAll();
+                    .permitAll()
+                    .and()
+                    .csrf().disable();
 
     }
 
