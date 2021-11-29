@@ -7,13 +7,10 @@ import javax.annotation.PostConstruct;
 
 import com.saastamoinen.jarno.linkdatabase.models.UserAccount;
 import com.saastamoinen.jarno.linkdatabase.repositories.UserAccountRepository;
-
 import com.saastamoinen.jarno.linkdatabase.services.LinkService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +34,7 @@ public class DefaultController {
         return "index";
     }
 
+
     @GetMapping("/link-page")
     public String showLinkPage(Model model) {
         model.addAttribute("links", linkService.getAllLinks());
@@ -44,7 +42,7 @@ public class DefaultController {
     }
 
     /* Default user for testing */
-    @Profile("testing")
+    /* @Profile("testing")
     @PostConstruct
     public void init() {
         userAccountRepository.deleteAll();
@@ -52,6 +50,6 @@ public class DefaultController {
                 "admin", passwordEncoder.encode("123"),
                 new ArrayList<>(Arrays.asList("ROLE_ADMIN")));
         userAccountRepository.save(userAccount);
-    }
+    } */
 
 }

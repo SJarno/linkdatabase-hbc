@@ -1,10 +1,13 @@
-<nav th:fragment="navigation">
-    <ul class="flex-container">
+<nav th:fragment="navigation" class="topnav">
+    <ul class="flex-container" id="navLinks">
         <li><a th:href="@{/index}"><h2>About</h2></a></li>
         <li><a th:href="@{/link-page}"><h2>Links</h2></a></li>
         <li sec:authorize="isAuthenticated()"><a th:href="@{/admin}"><h2>Admin</h2></a></li>
+<nav th:fragment="navigation">
+    <ul class="flex-container">
+        
         <!-- th:action -->
-        <form th:action="@{/login}" sec:authorize="isAnonymous()" method="post" >
+        <form th:action="@{/login}" sec:authorize="isAnonymous()" method="post">
             <ul class="login-logout-form">
                 <li><label for="name">Tunnus: </label></li>
                 <li><input type="text" name="username" id=""></li>
@@ -16,5 +19,10 @@
         <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
             <input type="submit" value="logout" id="logoutbutton">
         </form>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        
     </ul>
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenubar()">
+        <i class="fa fa-bars"></i>
+    </a>
 </nav>
