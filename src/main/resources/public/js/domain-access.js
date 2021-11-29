@@ -1,7 +1,7 @@
 const url = contextRoot;
 
 /*Load all images:  */
-async function loadLinks() {
+async function loadLinks(className) {
     const response = await fetch(url + "links", {
         headers: {
             "Accept": "application/json"
@@ -9,9 +9,8 @@ async function loadLinks() {
     });
 
     const links = await response.json();
-
-    addLinkToElement(links);
-    return links;
+    addLinkToElement(links, className);
+    
 };
 
 /* Load link by id */
@@ -25,22 +24,24 @@ async function loadLinkById(id) {
 };
 /* Place fetched images to page */
 /* const addLinkToElement = (data) => { */
-async function addLinkToElement(data) {
+async function addLinkToElement(data, className) {
     data.forEach(link => {
-        createSmallCard(link);
+        createSmallCard(link, className);
     });
 
 
 };
 
-const createSmallCard = async (link) => {
+const createSmallCard = async (link, className) => {
 
     /* create div element with id/class sm-card-container */
     const divCard = document.createElement("div");
-    divCard.className = "card";
+    divCard.className = "card "+className;
 
     const divCardContainer = document.createElement("div");
-    divCardContainer.className = "sm-card-container";
+    /* divCardContainer.className = "sm-card-container"; */
+    divCardContainer.className = "card-container";
+
 
     /* Create header element for title: */
     const headerElement = document.createElement("h3");
