@@ -29,11 +29,21 @@ public class DefaultController {
     private LinkService linkService;
 
     @GetMapping("/index")
-    public String showIndexPage(Model model) {
-        model.addAttribute("links", linkService.getAllLinks());
+    public String showIndexPage() {
+
         return "index";
     }
+<<<<<<< HEAD
     
+=======
+
+    @GetMapping("/link-page")
+    public String showLinkPage(Model model) {
+        model.addAttribute("links", linkService.getAllLinks());
+        return "link-page";
+    }
+
+>>>>>>> 5ae1f88041d3c73af115d30624d87c9176c80810
     /* Default user for testing */
     /* @Profile("testing")
     @PostConstruct
