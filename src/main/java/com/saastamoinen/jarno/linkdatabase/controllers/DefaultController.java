@@ -32,11 +32,16 @@ public class DefaultController {
     private LinkService linkService;
 
     @GetMapping("/index")
-    public String showIndexPage(Model model) {
-        model.addAttribute("links", linkService.getAllLinks());
+    public String showIndexPage() {
+
         return "index";
     }
-    
+
+    @GetMapping("/link-page")
+    public String showLinkPage(Model model) {
+        model.addAttribute("links", linkService.getAllLinks());
+        return "link-page";
+    }
 
     /* Default user for testing */
     @Profile("testing")
