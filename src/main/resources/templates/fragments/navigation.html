@@ -3,9 +3,6 @@
         <li><a th:href="@{/index}"><h2>About</h2></a></li>
         <li><a th:href="@{/link-page}"><h2>Links</h2></a></li>
         <li sec:authorize="isAuthenticated()"><a th:href="@{/admin}"><h2>Admin</h2></a></li>
-<nav th:fragment="navigation">
-    <ul class="flex-container">
-        
         <!-- th:action -->
         <form th:action="@{/login}" sec:authorize="isAnonymous()" method="post">
             <ul class="login-logout-form">
