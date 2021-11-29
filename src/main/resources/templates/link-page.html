@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head th:replace="fragments/head :: head(title='Links')">
+    </head>
+    <body>
+        <header th:replace="fragments/header :: header-fragment"></header>
+        <main>
+            <section class="index-main-section">
+                <h1>Interesting links: </h1>
+                <hr>
+            </section>  
+            <section class="index-link-section">
+                <h3>Linkit:</h3> 
+                    <ul th:each="link : ${links}">
+                        <li th:text="${link.title}"></li>
+                    </ul>
+            </section>
+        </main>
+        <footer>
+        </footer>
+
+</html>
