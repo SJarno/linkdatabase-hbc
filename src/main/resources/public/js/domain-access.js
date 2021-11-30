@@ -65,8 +65,9 @@ const createCard = async (link, className, modifyTrue) => {
     divCardContainer.appendChild(paraDescription);
     divCardContainer.appendChild(paraKey);
     divCardContainer.appendChild(hyperlink);
+    /* Elements for modify button */
     if (modifyTrue) {
-        /* Element for modify button */
+        
         const breakElement = document.createElement("br");
         const inputElement = document.createElement("button");
         inputElement.innerHTML = "Modify";
@@ -101,6 +102,8 @@ const createModal = (link, inputElement) => {
     const modalContent = document.createElement("form");
     modalContent.className = "modal-content";
     modalContent.method = "post";
+    modalContent.action = "/update-link/"+link.id;
+    /* modalContent.setAttribute("th:action", `@{/update-link/${link.id}}`); */
 
     const tableElement = createTable(link, modalDiv);
     
@@ -144,16 +147,53 @@ const createTable = (link, modalDiv) => {
     /* Elements for body: */
     const tableBody = document.createElement("tbody");
     tableBody.className = "modal-body";
-    const tbodyTrForTitle = document.createElement("tr");
-    const tbodyTdForTitle = document.createElement("td");
+    /* Modify title: */
+    const trForTitle = document.createElement("tr");
+    const tdForTitleLabel = document.createElement("td");
+    const tdForTitleInput = document.createElement("td");
     const labelForTitle = document.createElement("label");
+    labelForTitle.innerText = "Modify title: "+link.title;
     const inputForTitle = document.createElement("input");
+    inputForTitle.type = "text";
+
+    tdForTitleLabel.appendChild(labelForTitle);
+    tdForTitleInput.appendChild(inputForTitle);
+    trForTitle.appendChild(tdForTitleLabel);
+    trForTitle.appendChild(tdForTitleInput)
     
 
+    /* Modify description */
+    const trForDesc = document.createElement("tr");
+    const tdForDescLabel = document.createElement("td");
+    const tdForDescInput = document.createElement("td");
+    const labelForDesc = document.createElement("label");
+    labelForDesc.innerText = "Modify description: "+link.description;
+    const inputForDesc = document.createElement("input");
+    inputForDesc.type = "text";
+
+    tdForDescLabel.appendChild(labelForDesc);
+    tdForDescInput.appendChild(inputForDesc);
+    trForDesc.appendChild(tdForDescLabel);
+    trForDesc.appendChild(tdForDescInput);
+
+    /* Modify tag */
+
+    /* Modify link */
+    
+    tableBody.appendChild(trForTitle);
+    tableBody.appendChild(trForDesc);
     /* Elements for footer: */
     const tableFooter = document.createElement("tfooter");
     tableFooter.className = "modal-footer";
+    const rowForInput = document.createElement("tr");
+    const dataForInput = document.createElement("td");
+    const submitInput = document.createElement("input");
+    submitInput.type = "submit";
+    submitInput.value = "Modify";
 
+    dataForInput.appendChild(submitInput);
+    rowForInput.appendChild(dataForInput);
+    tableFooter.appendChild(rowForInput);
 
     tableHead.appendChild(spanElement);
     theadTr.appendChild(modalTitle);

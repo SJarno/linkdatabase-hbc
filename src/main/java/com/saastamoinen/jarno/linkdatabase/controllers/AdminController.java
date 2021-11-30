@@ -18,14 +18,18 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @Autowired
+    private LinkService linkService;
+
     @GetMapping("/admin")
-    public String adminPage(@ModelAttribute Link link) {
+    public String adminPage(Model model) {
         /* System.out.println();
         System.out.println("Adminissa");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         System.out.println(auth.getDetails());
         System.out.println(auth.getPrincipal());
         System.out.println(); */
+        //model.addAttribute("links", linkService.getAllLinks());
         return "admin-page";
     }
 

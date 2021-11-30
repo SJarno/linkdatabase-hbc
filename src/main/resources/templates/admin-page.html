@@ -5,6 +5,7 @@
 </head>
 
 <body onload="loadLinks('sm-card', true)">
+<!-- <body> -->
     <header th:replace="fragments/header :: header-fragment"></header>
     <main>
         <!-- Tab for content: -->
@@ -22,12 +23,19 @@
         </div>
 
         <!-- Tab content: -->
-        <!-- Displays links -->
+        
         <div class="content">
+            <!-- Section for Displaying links -->
             <section id="Links" class="tabcontent">
                 <h2>Links:</h2>
-                <div id="links" class="content">
-                </div>
+                <div id="links" class="container"></div>
+                <!-- <div id="links" class="content" th:each="link : ${links}">
+                    <div class="sm-card">
+                        <div class="card-container">
+                            <h3 th:text="${link.title}"></h3>
+                        </div>
+                    </div>
+                </div> -->
             </section>
             <!-- section for adding links -->
             <section id="LinkForm" class="tabcontent">
