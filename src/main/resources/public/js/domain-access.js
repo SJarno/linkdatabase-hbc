@@ -102,7 +102,7 @@ const createModal = (link, inputElement) => {
     const modalContent = document.createElement("form");
     modalContent.className = "modal-content";
     modalContent.method = "post";
-    modalContent.action = "/update-link/"+link.id;
+    /* modalContent.action = "/update-link/"+link.id; */
     /* modalContent.setAttribute("th:action", `@{/update-link/${link.id}}`); */
 
     const tableElement = createTable(link, modalDiv);

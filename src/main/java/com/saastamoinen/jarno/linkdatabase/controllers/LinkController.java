@@ -31,7 +31,7 @@ public class LinkController {
     }
 
     /* Create */
-    @PostMapping("/add-link")
+    @PostMapping("/link/add")
     public String addLink(@Valid @ModelAttribute Link link, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "admin-page";
@@ -63,9 +63,9 @@ public class LinkController {
     }
 
     /* Update */
-    @PostMapping("/update-link/{id}")
-    public void updateLink(@PathVariable Long id) {
-        /* linkService.updateLink(id, link); */
+    @PutMapping("/update-link/{id}")
+    public void updateLink(@ModelAttribute Link link, @PathVariable Long id) {
+        linkService.updateLink(id, link);
         System.out.println();
         System.out.println("Tultiin oikeaan paikkaan!");
         System.out.println();

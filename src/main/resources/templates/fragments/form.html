@@ -1,5 +1,5 @@
 <!-- Form for adding a link -->
-<form th:action="@{/add-link}" method="post" th:fragment="link-form" th:object="${link}">
+<form action="#" th:action="@{/link/add}" method="post" th:fragment="link-form" th:object="${link}">
     <table>
         <thead>
             <tr>
@@ -9,25 +9,25 @@
         <tbody>
             <tr>
                 <td><label for="title">Title: </label></td>
-                <td><input type="text" th:field="*{title}" minlength="4" maxlength="10"></td>
-                <td th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-message"></td>
+                <td><input type="text" th:field="*{title}" minlength="4" maxlength="10" name="title" id="title"></td>
+                <!-- <td th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-message"></td> -->
             </tr>
             <tr>
                 <td><label for="description">Description: </label></td>
-                <td>
+                <!-- <td>
                     <textarea name="description" cols="20" rows="5" th:field="*{description}" minlength="4" maxlength="10"></textarea>
                 </td>
-                <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message"></td>
+                <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message"></td> -->
             </tr>
             <tr>
                 <td><label for="keyword">Keyword: </label></td>
-                <td><input type="text" th:field="*{keyword}"></td>
-                <td th:if="${#fields.hasErrors('keyword')}" th:errors="*{keyword}" class="error-message"></td>
+                <!-- <td><input type="text" th:field="*{keyword}"></td>
+                <td th:if="${#fields.hasErrors('keyword')}" th:errors="*{keyword}" class="error-message"></td> -->
             </tr>
             <tr>
                 <td><label for="url">Url for link: </label></td>
-                <td><input type="text" th:field="*{url}"></td>
-                <td th:if="${#fields.hasErrors('url')}" th:errors="*{url}" class="error-message"></td>
+                <!-- <td><input type="text" th:field="*{url}"></td>
+                <td th:if="${#fields.hasErrors('url')}" th:errors="*{url}" class="error-message"></td> -->
             </tr>
         </tbody>
         <tfoot>

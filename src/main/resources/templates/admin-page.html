@@ -4,8 +4,8 @@
 <head th:replace="fragments/head :: head(title='Admin page')">
 </head>
 
-<body onload="loadLinks('sm-card', true)">
-<!-- <body> -->
+<!-- <body onload="loadLinks('sm-card', true)"> -->
+<body>
     <header th:replace="fragments/header :: header-fragment"></header>
     <main>
         <!-- Tab for content: -->
@@ -19,7 +19,6 @@
             <button class="tablinks" onclick="openTab(event, 'Settings')">
                 <p>Settings</p>
             </button>
-
         </div>
 
         <!-- Tab content: -->
@@ -28,7 +27,7 @@
             <!-- Section for Displaying links -->
             <section id="Links" class="tabcontent">
                 <h2>Links:</h2>
-                <div id="links" class="container"></div>
+                <!-- <div id="links" class="container"></div> -->
                 <!-- <div id="links" class="content" th:each="link : ${links}">
                     <div class="sm-card">
                         <div class="card-container">
@@ -50,6 +49,7 @@
     <footer>
 
     </footer>
+    <script th:src="@{/js/tabController.js}" async defer></script>
 </body>
 
 </html>
