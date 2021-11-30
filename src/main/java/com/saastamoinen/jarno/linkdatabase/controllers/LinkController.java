@@ -63,9 +63,12 @@ public class LinkController {
     }
 
     /* Update */
-    @PutMapping("/update-link/{id}")
-    public void updateLink(Long id, @ModelAttribute Link link) {
-        linkService.updateLink(id, link);
+    @PostMapping("/update-link/{id}")
+    public void updateLink(@PathVariable Long id) {
+        /* linkService.updateLink(id, link); */
+        System.out.println();
+        System.out.println("Tultiin oikeaan paikkaan!");
+        System.out.println();
     }
 
     /* Delete */

@@ -34,7 +34,7 @@ public class TestingSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/index", "/", "/link-page").permitAll()
                 .antMatchers(HttpMethod.GET, "/links", "links/**").permitAll()
                 .antMatchers("/admin").authenticated()
-                .anyRequest().fullyAuthenticated()
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                     .loginPage("/index")
