@@ -31,6 +31,7 @@ public class ProductionSecurityConfiguration extends WebSecurityConfigurerAdapte
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/index", "/", "/link-page").permitAll()
                 .antMatchers(HttpMethod.GET, "/links").permitAll()
+                .antMatchers(HttpMethod.GET, "/links/search/**").permitAll()
                 .antMatchers("/admin").authenticated()
                 .anyRequest().fullyAuthenticated()
                 .and()
