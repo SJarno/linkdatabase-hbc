@@ -7,7 +7,7 @@
         <form th:action="@{/login}" sec:authorize="isAnonymous()" method="post">
             <ul class="login-logout-form">
                 <li><label for="name">Tunnus: </label></li>
-                <li><input type="text" name="username" id=""></li>
+                <li><input type="text" name="username"></li>
                 <li><label for="password">Salasana: </label></li>
                 <li><input type="password" name="password" id=""></li>
                 <li><input type="submit" value="Log in!" id="loginbutton"></li>
@@ -16,8 +16,7 @@
         <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
             <input type="submit" value="logout" id="logoutbutton">
         </form>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->   
     </ul>
     <a href="javascript:void(0);" class="icon" onclick="toggleMenubar()">
         <i class="fa fa-bars"></i>

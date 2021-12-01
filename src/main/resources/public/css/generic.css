@@ -87,11 +87,12 @@ a, p, li, label, td, input, button, textarea {
     border-radius: 0.5rem;
     color: rgb(202, 197, 176);
     border: 0.175rem solid var(--main-font-color);
-    font-size: 1.4rem;
+    
 }
 
 #loginbutton:hover {
     cursor: pointer;
+    color: rgb(243, 240, 229);
 }
 
 #logoutbutton {
@@ -99,11 +100,12 @@ a, p, li, label, td, input, button, textarea {
     border-radius: 0.5rem;
     color: rgb(202, 197, 176);
     border: 0.2rem solid var(--main-font-color);
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
 }
 
 #logoutbutton:hover {
     cursor: pointer;
+    color: rgb(243, 240, 229);
 }
 
 .login-logout-form {
@@ -159,16 +161,22 @@ a, p, li, label, td, input, button, textarea {
     margin-top: 1rem;
 }
 
-#modify-addlink-button {
+.modify-addlink-button {
     margin-top: 2rem;
     background-color: inherit;
     border-radius: 1rem;
 }
 
-#modify-addlink-button:hover {
+.modify-addlink-button:hover {
     border: solid 0.3rem rgba(219, 199, 155, 0.8);
     color: #ee8b0a;
     cursor: pointer;
+}
+
+.delete-link-btn {
+    color: whitesmoke;
+    background-color: red;
+    border-radius: 1rem;
 }
 
 /* Tablet view */

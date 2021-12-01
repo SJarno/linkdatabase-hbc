@@ -3,16 +3,18 @@
 
     <head th:replace="fragments/head :: head(title='Links')">
     </head>
-    <body onload="loadLinks('md-card', false)">
+    <body onload="loadLinks('md-card')">
         <header th:replace="fragments/header :: header-fragment"></header>
         <main>
             <section class="link-main-content">
-                <h1>Interesting links: </h1>
+                <h1>Interesting links</h1>
                 <hr>
-                <form class="example" >
-                    <input type="text" placeholder="Search by tag name..." name="search">
+                <!-- <form class="search-form">
+                    <input type="text" placeholder="Search by tag name..." th:name="tag">
                     <button type="submit"><i class="fa fa-search"></i></button>
-                  </form>
+                  </form> -->
+                  <input type="text" placeholder="Search by tag name..." name="tag" id="search-input" oninput="searchByTag()">
+                  <!-- <button onclick="searchByTag()"><i class="fa fa-search"></i></button> -->
             </section>  
             <section>
                 <div id="links" class="content">
@@ -21,6 +23,6 @@
         </main>
         <footer>
         </footer>
-        <script th:src="@{/js/domain-access.js}" defer></script>
+        
     </body>
 </html>

@@ -10,6 +10,10 @@
   flex-basis: 100%;
 }
 
+#Links h2 {
+  text-align: center;
+}
+
 #Settings, #LinkForm {
   background: rgba(0, 0, 0, 0.5);
   border: solid 0.1rem black;

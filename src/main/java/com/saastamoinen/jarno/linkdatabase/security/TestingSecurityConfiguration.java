@@ -33,6 +33,7 @@ public class TestingSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/index", "/", "/link-page").permitAll()
                 .antMatchers(HttpMethod.GET, "/links", "links/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/links/search/**").permitAll()
                 .antMatchers("/admin").authenticated()
                 .anyRequest().authenticated()
                 .and()

@@ -22,14 +22,14 @@ public class AdminController {
     private LinkService linkService;
 
     @GetMapping("/admin")
-    public String adminPage(Model model) {
+    public String adminPage(@ModelAttribute Link link, Model model) {
         /* System.out.println();
         System.out.println("Adminissa");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         System.out.println(auth.getDetails());
         System.out.println(auth.getPrincipal());
         System.out.println(); */
-        //model.addAttribute("links", linkService.getAllLinks());
+        model.addAttribute("links", linkService.getAllLinks());
         return "admin-page";
     }
 

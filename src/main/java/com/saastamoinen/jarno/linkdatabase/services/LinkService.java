@@ -23,23 +23,28 @@ public class LinkService {
     public List<Link> getAllLinks() {
         return linkRepository.findAll();
     }
-    public Link getLinkById(Long id) {
-        return linkRepository.findById(id).get();
+    public Optional<Link> getLinkById(Long id) {
+        return linkRepository.findById(id);
     }
     
     public List<Link> findLinksByTag(String keyword) {
         return linkRepository.findByKeyword(keyword);
     }
-    /* Update */
-    public void updateLink(Long id, Link link) {
-        Optional<Link> linkToUpdate = linkRepository.findById(id);
-        linkToUpdate.get().setTitle(link.getTitle());
-        linkToUpdate.get().setDescription(link.getDescription());
-        linkToUpdate.get().setKeyword(link.getKeyword());
-        linkToUpdate.get().setUrl(link.getUrl());
-        if (linkToUpdate.isPresent()) {
-            linkRepository.save(linkToUpdate.get());
+    /* Update link*/
+    public void updateLink(Link oldLink, Link newLink) {
+        if (!newLink.getTitle().isBlank()) {
+            oldLink.setTitle(newLink.getTitle());
         }
+        if (!newLink.getDescription().isBlank()) {
+            oldLink.setDescription(newLink.getDescription());
+        }
+        if (!newLink.getKeyword().isBlank()) {
+            oldLink.setKeyword(newLink.getKeyword());
+        }
+        if (!newLink.getUrl().isBlank()) {
+            oldLink.setUrl(newLink.getUrl());
+        }
+        linkRepository.save(oldLink);
     }
     /* Delete */
     public void deleteLink(Long id) {
