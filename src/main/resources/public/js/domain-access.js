@@ -9,6 +9,7 @@ async function loadLinks(className) {
     });
 
     const links = await response.json();
+    /* removeLinkElements(); */
     addLinkToElement(links, className);
 
 };
@@ -25,7 +26,7 @@ async function searchByTag() {
             }
         });
         const links = await response.json();
-        removeLinkElements();
+        /* removeLinkElements(); */
         addLinkToElement(links, "md-card");
     }
     /* console.log(url+"links/search/"+tag); */
@@ -44,6 +45,7 @@ async function loadLinkById(id) {
 /* Place fetched images to page */
 /* const addLinkToElement = (data) => { */
 async function addLinkToElement(data, className) {
+    removeLinkElements();
     data.forEach(link => {
         createCard(link, className);
     });

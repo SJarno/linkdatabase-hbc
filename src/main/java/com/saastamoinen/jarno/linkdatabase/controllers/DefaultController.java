@@ -42,7 +42,6 @@ public class DefaultController {
     }
 
     /* Default user for testing */
-    
     /* @PostConstruct
     public void init() {
         userAccountRepository.deleteAll();
