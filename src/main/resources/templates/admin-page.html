@@ -37,7 +37,7 @@
 								<p>Keyword: <span th:text="${getLink.keyword}"></span></p>
 								<a th:href="${getLink.url}" target="_blank">Linkki sivulle</a>
 								<br>
-								<button th:id="${getLink.id}" onclick="toggleModal(this)" class="modify-addlink-button">Modify Link</button>
+								<button th:id="${getLink.id}" onclick="toggleModal(this)" class="submit-link-btn">Modify Link</button>
 								<!-- Display modal: -->
 								<div th:id="mainModal-+${getLink.id}" class="modal">
 									<!-- Content for modal: -->

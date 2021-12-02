@@ -114,9 +114,6 @@ a, p, li, label, td, input, button, textarea {
     flex-wrap: wrap; */
 }
 
-/* .login-logout-form *> {
-    flex-basis: 100%;
-} */
 /* Mobile nav view: */
 .topnav {
     overflow: hidden;
@@ -161,13 +158,13 @@ a, p, li, label, td, input, button, textarea {
     margin-top: 1rem;
 }
 
-.modify-addlink-button {
-    margin-top: 2rem;
+.submit-link-btn {
+    /* margin-top: 2rem; */
     background-color: inherit;
     border-radius: 1rem;
 }
 
-.modify-addlink-button:hover {
+.submit-link-btn:hover {
     border: solid 0.3rem rgba(219, 199, 155, 0.8);
     color: #ee8b0a;
     cursor: pointer;
@@ -178,6 +175,12 @@ a, p, li, label, td, input, button, textarea {
     background-color: red;
     border-radius: 1rem;
 }
+
+.delete-link-btn:hover {
+    cursor: pointer;
+}
+
+
 
 /* Tablet view */
 @media only screen and (min-width: 768px) {
