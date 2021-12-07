@@ -28,7 +28,7 @@ public class LinkService {
     }
     
     public List<Link> findLinksByTag(String keyword) {
-        return linkRepository.findByKeyword(keyword);
+        return linkRepository.customFindByKeyWordIgnoringCase("%"+keyword+"%");
     }
     /* Update link*/
     public void updateLink(Link oldLink, Link newLink) {
