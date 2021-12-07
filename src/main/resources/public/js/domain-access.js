@@ -61,6 +61,14 @@ const createCard = async (link, className) => {
     /* create div element with id/class sm-card-container */
     const divCard = document.createElement("div");
     divCard.className = "card " + className;
+    divCard.addEventListener("click", function (event) {
+        console.log("tulostus juu");
+        window.open(link.url);
+    });
+    //divCard.onclick = openLink(link.url);
+    /* divCard.onclick = window.open(link.url); */
+    /* divCard.onclick = window.location = link.url; */
+    
 
     const divCardContainer = document.createElement("div");
     divCardContainer.className = "card-container";
@@ -80,15 +88,17 @@ const createCard = async (link, className) => {
     paraKey.innerHTML = "Tag: " + link.keyword;
 
     /* Element for hyperlink */
-    const hyperlink = document.createElement("a");
+    /* const hyperlink = document.createElement("a");
     hyperlink.href = link.url;
     hyperlink.innerHTML = "Click to link!";
-    hyperlink.target = "_blank";
+    hyperlink.target = "_blank"; */
+    const paraClick = document.createElement("p");
+    paraClick.innerHTML = "Click to go to page!"
 
     divCardContainer.appendChild(headerElement);
     divCardContainer.appendChild(paraDescription);
     divCardContainer.appendChild(paraKey);
-    divCardContainer.appendChild(hyperlink);
+    divCardContainer.appendChild(paraClick);
 
 
     divCard.appendChild(divCardContainer);
@@ -96,6 +106,8 @@ const createCard = async (link, className) => {
     document.getElementById("links").appendChild(divCard);
 
 };
+
+
 
 
 
