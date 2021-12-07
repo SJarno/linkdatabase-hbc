@@ -15,7 +15,8 @@ body {
 
 header figure {
     background-image: url("../images/vla-g60630cd30_1920.jpg");
-    height: 15rem;
+    /* height: 15rem; */
+    height: 22rem;
     background-position: 27% 6%;
     background-repeat: no-repeat;
     background-size: cover;
