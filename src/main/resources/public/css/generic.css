@@ -183,6 +183,22 @@ a, p, li, label, td, input, button, textarea {
 
 
 /* Tablet view */
+
+
+@media only screen and (min-width: 375px) {
+    header figure {
+        height: 15rem;
+        background-position: 50% 40%;
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    header figure {
+        height: 17rem;
+        background-position: 50% 50%;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .flex-container>* {
         flex-basis: 0;
@@ -216,16 +232,9 @@ a, p, li, label, td, input, button, textarea {
 
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 1024px) {
     header figure {
-        height: 15rem;
-        background-position: 50% 40%;
-    }
-}
-
-@media only screen and (min-width: 426px) {
-    header figure {
-        height: 17rem;
+        height: 30rem;
         background-position: 50% 50%;
     }
 }
