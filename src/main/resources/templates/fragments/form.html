@@ -1,6 +1,6 @@
 <!-- Form for adding a link -->
 <form action="#" th:action="@{/link/add}" method="post" th:fragment="link-form" th:object="${link}">
-	<table>
+	<table class="admin-tables">
 		<thead>
 			<tr>
 				<th>
@@ -17,8 +17,8 @@
 			<tr>
 				<td><label for="description">Description: </label></td>
 				<td>
-					<textarea name="description" cols="20" rows="5" th:field="*{description}" minlength="4"
-						maxlength="10"></textarea>
+					<textarea name="description" cols="20" rows="5" th:field="*{description}" minlength="1"
+						maxlength="254"></textarea>
 				</td>
 				<td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message"></td>
 			</tr>
@@ -44,7 +44,7 @@
 </form>
 <!-- Form to change password -->
 <form th:action="@{/update-admin}" method="post" th:fragment="update-password-fragment">
-	<table>
+	<table class=".admin-tables">
 		<thead>
 			<tr>
 				<h1>Change admin password</h1>
