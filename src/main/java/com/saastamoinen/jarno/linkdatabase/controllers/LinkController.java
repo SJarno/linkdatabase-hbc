@@ -1,6 +1,7 @@
 package com.saastamoinen.jarno.linkdatabase.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -31,12 +33,14 @@ public class LinkController {
     }
 
     /* Create */
-    @PostMapping("/add-link")
-    public String addLink(@Valid @ModelAttribute Link link, BindingResult bindingResult) {
+    @PostMapping("/link/add")
+    public String addLink(
+        @Valid @ModelAttribute Link newLink, 
+        BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "admin-page";
         }
-        linkService.createLink(link);
+        linkService.createLink(newLink);
         return "redirect:/admin";
     }
 
@@ -51,6 +55,17 @@ public class LinkController {
     public List<Link> getAllLinks() {
         return linkService.getAllLinks();
     }
+    /* Get link by tag names */
+    @ResponseBody
+    @RequestMapping(
+        value = "links/search/{tag}",
+        method = RequestMethod.GET,
+        produces = "application/json"
+    )
+    public List<Link> getLinksByTag(@PathVariable String tag) {
+        return linkService.findLinksByTag(tag);
+    }
+
     /* get link by id */
     @ResponseBody
     @RequestMapping(
@@ -59,19 +74,33 @@ public class LinkController {
         produces = "application/json"
     )
     public Link getLinkById(@PathVariable Long id) {
-        return linkService.getLinkById(id);
+        return linkService.getLinkById(id).get();
     }
 
     /* Update */
-    @PutMapping("/update-link/{id}")
-    public void updateLink(Long id, @ModelAttribute Link link) {
-        linkService.updateLink(id, link);
+    @PostMapping("/update-link/{id}")
+    public String updateLink(@PathVariable Long id,
+        @RequestParam(required = false) String title,
+        @RequestParam(required = false) String description,
+        @RequestParam(required = false) String keyword,
+        @RequestParam(required = false) String url) {
+        
+        Optional<Link> oldLink = linkService.getLinkById(id);
+        if (oldLink.isPresent()) {
+            Link newLink = new Link(title, description, keyword, url);
+            linkService.updateLink(oldLink.get(), newLink);
+            return "redirect:/admin";
+        }
+        return "admin-page";
+        
+        
     }
 
     /* Delete */
-    @DeleteMapping("/link/{id}")
-    public void deleteLink(@PathVariable Long id) {
+    @PostMapping("/delete-link/{id}")
+    public String deleteLink(@PathVariable Long id) {
         linkService.deleteLink(id);
+        return "redirect:/admin";
     } 
     
 }

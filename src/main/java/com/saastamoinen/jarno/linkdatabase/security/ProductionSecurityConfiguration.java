@@ -29,9 +29,10 @@ public class ProductionSecurityConfiguration extends WebSecurityConfigurerAdapte
         http.headers().frameOptions().sameOrigin();
         http.authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/index", "/").permitAll()
-                .antMatchers(HttpMethod.GET, "/index").permitAll()
-                .antMatchers("/admin", "/links").authenticated()
+                .antMatchers("/index", "/", "/link-page").permitAll()
+                .antMatchers(HttpMethod.GET, "/links").permitAll()
+                .antMatchers(HttpMethod.GET, "/links/search/**").permitAll()
+                .antMatchers("/admin").authenticated()
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin()

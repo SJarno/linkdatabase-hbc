@@ -1,8 +1,8 @@
-.index-main-section {
+.index-main-content {
     margin: 2rem;
     text-align: center;
 }
 
-.index-link-section {
-    margin: 2rem;
+.index-main-content p {
+    padding: 2rem;
 }
