@@ -34,7 +34,7 @@
 							<div class="card-container">
 								<h3>Title: <span th:text="${getLink.title}"></span></h3>
 								<p>Description: <span th:text="${getLink.description}"></span></p>
-								<p>Keyword: <span th:text="${getLink.keyword}"></span></p>
+								<p>Tag: <span th:text="${getLink.keyword}"></span></p>
 								<a th:href="${getLink.url}" target="_blank">Linkki sivulle</a>
 								<br>
 								<button th:id="${getLink.id}" onclick="toggleModal(this)" class="submit-link-btn">Modify Link</button>

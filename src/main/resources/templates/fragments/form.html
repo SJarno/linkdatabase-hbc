@@ -23,7 +23,7 @@
 				<td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message"></td>
 			</tr>
 			<tr>
-				<td><label for="keyword">Keyword: </label></td>
+				<td><label for="keyword">Tag/keyword: </label></td>
 				<td><input type="text" th:field="*{keyword}"></td>
 				<td th:if="${#fields.hasErrors('keyword')}" th:errors="*{keyword}" class="error-message"></td>
 			</tr>
@@ -67,7 +67,7 @@
 		</tfoot>
 	</table>
 </form>
-<!-- Form for modal -->
+<!-- Form for modal/modify link -->
 <div th:fragment="update-form-modal">
 	<form action="#" th:action="@{/update-link/{id}(id=${getLink.id})}" method="post">
 		<table class="modal-content">
@@ -80,19 +80,19 @@
 			<tbody class="modal-body">
 				<tr>
 					<td><label for="title">Title: </label></td>
-					<td><input type="text" th:name="title"></td>
+					<td><input type="text" th:name="title" th:value="${getLink.title}"></td>
 				</tr>
 				<tr>
 					<td><label for="description">Description: </label></td>
-					<td><textarea th:name="description" cols="20" rows="5"></textarea></td>
+					<td><textarea th:name="description" cols="20" rows="5" th:text="${getLink.description}"></textarea></td>
 				</tr>
 				<tr>
-					<td><label for="keyword">Keyword: </label></td>
-					<td><input type="text" th:name="keyword"></td>
+					<td><label for="keyword">Tag/keyword: </label></td>
+					<td><input type="text" th:name="keyword" th:value="${getLink.keyword}"></td>
 				</tr>
 				<tr>
 					<td><label for="url">Url for link: </label></td>
-					<td><input type="text" th:name="url"></td>
+					<td><input type="text" th:name="url" th:value="${getLink.url}"></td>
 				</tr>
 			</tbody>
 			<tfoot class="modal-footer">

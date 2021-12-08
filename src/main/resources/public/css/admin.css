@@ -15,7 +15,7 @@
 }
 
 #Settings, #LinkForm {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border: solid 0.1rem black;
   line-height: 3rem;
   padding: 2rem;
@@ -63,12 +63,6 @@ tr > * {
 }
 
 @media only screen and (min-width: 768px) {
-  tr {
-    /* flex-direction: row;
-    flex-wrap: nowrap; */
-    /* text-align: justify; */
-    
-  }
   #Settings, #LinkForm {
     max-width: 40%;
     line-height: 4rem;

@@ -76,7 +76,7 @@
 /* Add Animation */
 @keyframes animatetop {
     from {
-        top: -300px;
+        top: -30rem;
         opacity: 0
     }
 
@@ -89,5 +89,8 @@
 @media only screen and (min-width: 768px) {
     .modal {
         padding-top: 10rem;
+    }
+    .modal-content {
+        width: 50%;
     }
   }
