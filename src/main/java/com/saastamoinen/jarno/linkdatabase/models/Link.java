@@ -1,6 +1,7 @@
 package com.saastamoinen.jarno.linkdatabase.models;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -14,12 +15,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "Links")
 public class Link extends AbstractPersistable<Long> {
 
     @NotBlank(message = "Title cannot be empty")
-    @Size(min = 4, message = "Title must be at least 4 characters long")
     private String title;
 
+    @Size(max = 244)
     @NotBlank(message = "Description cannot be empty")
     private String description;
 

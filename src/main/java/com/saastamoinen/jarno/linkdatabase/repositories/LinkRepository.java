@@ -16,7 +16,7 @@ public interface LinkRepository extends JpaRepository<Link, Long>{
 
     /* Custom query for finging tags */
     @Query(
-        value = "SELECT * FROM link WHERE LOWER(keyword) LIKE LOWER(:keyword)", 
+        value = "SELECT * FROM links WHERE LOWER(keyword) LIKE LOWER(:keyword)", 
         nativeQuery = true)
     List<Link> customFindByKeyWordIgnoringCase(@Param("keyword") String keyword);
     /* Another option here: */
