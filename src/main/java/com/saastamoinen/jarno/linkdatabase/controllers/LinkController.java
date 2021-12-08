@@ -77,7 +77,8 @@ public class LinkController {
 
     /* Update */
     @PostMapping("/update-link/{id}")
-    public String updateLink(@PathVariable Long id,
+    public String updateLink(
+        @PathVariable Long id,
         @RequestParam(required = false) String title,
         @RequestParam(required = false) String description,
         @RequestParam(required = false) String keyword,
