@@ -8,19 +8,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+public interface LinkRepository extends JpaRepository<Link, Long> {
 
-
-public interface LinkRepository extends JpaRepository<Link, Long>{
-    /* method for finding by key */
-    public List<Link> findByKeyword(String keyword);
-
-    /* Custom query for finging tags */
-    @Query(
-        value = "SELECT * FROM links WHERE LOWER(keyword) LIKE LOWER(:keyword)", 
-        nativeQuery = true)
+    /* Custom query for finging tags/keyword */
+    @Query(value = "SELECT * FROM links WHERE LOWER(keyword) LIKE LOWER(:keyword)", nativeQuery = true)
     List<Link> customFindByKeyWordIgnoringCase(@Param("keyword") String keyword);
 
-    
-
-    
 }
