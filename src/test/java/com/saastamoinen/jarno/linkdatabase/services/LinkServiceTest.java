@@ -10,7 +10,6 @@ import java.util.List;
 import com.saastamoinen.jarno.linkdatabase.models.Link;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +17,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
-import org.springframework.test.annotation.DirtiesContext.MethodMode;
 import org.springframework.test.context.ActiveProfiles;
 
 @ActiveProfiles("test")
@@ -77,7 +75,7 @@ public class LinkServiceTest {
         linkService.createLink(link);
         Link linkToRemove = linkService.getLinkById(1L).get();
         assertEquals(link, linkToRemove);
-        linkService.deleteLink(1L);
+        linkService.deleteLink(linkToRemove.getId());
         assertEquals(0, linkService.getAllLinks().size());
         links.forEach(link -> linkService.createLink(link));
         linkService.deleteLink(2L);
