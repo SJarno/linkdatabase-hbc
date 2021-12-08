@@ -19,8 +19,8 @@ public interface LinkRepository extends JpaRepository<Link, Long>{
         value = "SELECT * FROM links WHERE LOWER(keyword) LIKE LOWER(:keyword)", 
         nativeQuery = true)
     List<Link> customFindByKeyWordIgnoringCase(@Param("keyword") String keyword);
-    /* Another option here: */
-    /* @Query(value = "SELECT * FROM link WHERE keyword ILIKE :keyword"+"%", nativeQuery = true) */
+
+    
 
     
 }
