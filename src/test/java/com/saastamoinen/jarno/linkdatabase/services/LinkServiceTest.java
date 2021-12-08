@@ -10,20 +10,24 @@ import java.util.List;
 import com.saastamoinen.jarno.linkdatabase.models.Link;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.DirtiesContext.ClassMode;
+import org.springframework.test.annotation.DirtiesContext.MethodMode;
 import org.springframework.test.context.ActiveProfiles;
 
 @ActiveProfiles("test")
 @SpringBootTest
+@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class LinkServiceTest {
 
     @Autowired
     private LinkService linkService;
-
 
     @MockBean
     private PasswordEncoder passwordEncoder;
@@ -46,10 +50,11 @@ public class LinkServiceTest {
         assertEquals(0, linkService.getAllLinks().size());
         linkService.createLink(link);
         assertEquals(1, linkService.getAllLinks().size());
-        assertEquals(link, linkService.getAllLinks().get(0));
+
         links.forEach(link -> linkService.createLink(link));
         assertEquals(3, linkService.getAllLinks().size());
     }
+
     @Test
     void testGetLinkById() {
         linkService.createLink(link);
@@ -80,7 +85,6 @@ public class LinkServiceTest {
         linkService.deleteLink(3L);
         assertEquals(0, linkService.getAllLinks().size());
     }
-
 
     @Test
     void testUpdateLink() {
