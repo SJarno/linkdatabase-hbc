@@ -1,14 +1,14 @@
 <nav th:fragment="navigation" class="topnav">
     <ul class="flex-container" id="navLinks">
-        <li><a th:href="@{/index}"><h2>About</h2></a></li>
-        <li><a th:href="@{/link-page}"><h2>Links</h2></a></li>
-        <li sec:authorize="isAuthenticated()"><a th:href="@{/admin}"><h2>Admin</h2></a></li>
+        <li><a th:href="@{/index}"><h2>ABOUT</h2></a></li>
+        <li><a th:href="@{/link-page}"><h2>LINKS</h2></a></li>
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/admin}"><h2>ADMIN</h2></a></li>
         <!-- th:action -->
         <form th:action="@{/login}" sec:authorize="isAnonymous()" method="post">
             <ul class="login-logout-form">
-                <li><label for="name">Tunnus: </label></li>
+                <li><label for="name"><h4>Username:</h4></label></li>
                 <li><input type="text" name="username"></li>
-                <li><label for="password">Salasana: </label></li>
+                <li><label for="password"><h4>Password:</h4></label></li>
                 <li><input type="password" name="password" id=""></li>
                 <li><input type="submit" value="Log in!" id="loginbutton"></li>
             </ul>

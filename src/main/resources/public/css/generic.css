@@ -2,6 +2,8 @@
 
 :root {
     --main-font-color: #b4711a;
+    --nav-and-footer-bg: rgb(27, 26, 26);
+    --body-bg-color: rgb(44, 41, 41);
 }
 
 html {
@@ -32,8 +34,7 @@ main {
 }
 
 /* generic colors: */
-h1, h2, h3 {
-    /* margin-top: -1rem; */
+h1, h2, h3, h4 {
     color: var(--main-font-color);
 }
 
@@ -50,9 +51,13 @@ h3 {
     font-size: 3rem;
 }
 
+h4 {
+    font-size: 2.4rem;
+}
+
 nav {
     padding: 2rem;
-    background-color: rgb(27, 26, 26);
+    background-color: var(--nav-and-footer-bg);
     border-bottom: solid 0.25rem wheat;
 }
 
@@ -61,6 +66,8 @@ a, p, li, label, td, input, button, textarea {
     text-decoration: none;
     color: var(--main-font-color);
 }
+
+
 
 .error-message {
     /* font-size: 1.8rem; */
@@ -125,8 +132,6 @@ a, p, li, label, td, input, button, textarea {
     display: none;
 }
 
-/* Style navigation menu links */
-
 
 /* Style hamburger menu */
 .topnav a.icon {
@@ -180,9 +185,11 @@ a, p, li, label, td, input, button, textarea {
     cursor: pointer;
 }
 
-
-
-/* Tablet view */
+footer {
+    background-color: var(--nav-and-footer-bg);
+    text-align: center;
+    padding: 2rem;
+}
 
 
 @media only screen and (min-width: 375px) {
