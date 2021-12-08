@@ -8,6 +8,7 @@ import com.saastamoinen.jarno.linkdatabase.repositories.LinkRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class LinkService {
@@ -31,6 +32,7 @@ public class LinkService {
         return linkRepository.customFindByKeyWordIgnoringCase("%"+keyword+"%");
     }
     /* Update link*/
+    @Transactional
     public void updateLink(Link oldLink, Link newLink) {
         if (!newLink.getTitle().isBlank()) {
             oldLink.setTitle(newLink.getTitle());
