@@ -3,6 +3,10 @@
     text-align: center;
 }
 
+.index-main-content article {
+    line-height: 3rem;
+}
+
 .index-main-content p {
-    padding: 2rem;
+    /* margin-bottom: 2rem; */
 }
