@@ -1,4 +1,5 @@
 # linkdatabase-hbc
+![Github Actions](https://github.com/SJarno/ohtu-2022-viikko1/actions/workflows/maven.yml/badge.svg)
 A school project - HBC
 
 Production release can be found here: https://linkdatabase-hbc-practice.herokuapp.com/
