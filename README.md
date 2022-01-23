@@ -3,6 +3,8 @@
 
 A school project - HBC
 
+The original assignment was much simpler, and did not contain any frontwork with appealing visual look. The idea was just to post data to local in-memory db, and get data to display on a table etc. No authentication nor prod release involved.
+
 Production release can be found here: https://linkdatabase-hbc-practice.herokuapp.com/
 
 ## About
