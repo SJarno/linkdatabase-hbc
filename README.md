@@ -7,6 +7,9 @@ The original assignment was much simpler, and did not contain any frontwork with
 
 Production release can be found here: https://linkdatabase-hbc-practice.herokuapp.com/
 
+## Note:
+If you are interested testing the functionality in admin(adding www-links) in production, please contact me via jarno.saastamoinen@hotmail.com
+
 ## About
 A project for school I builded for future reference. Went bit over with this one, but practice is practice.
 
