@@ -5,7 +5,7 @@ A school project - HBC
 
 The original assignment was much simpler, and did not contain any frontwork with appealing visual look. The idea was just to post data to local in-memory db, and get data to display on a table etc. No authentication nor prod release involved.
 
-Production release can be found here: https://linkdatabase-hbc-practice.herokuapp.com/
+Note: not in prod anymore in Heroku as free dynos will not be available in near future.
 
 ## Note:
 If you are interested testing the functionality in admin(adding www-links) in production, please contact me via jarno.saastamoinen@hotmail.com
